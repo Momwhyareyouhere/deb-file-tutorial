@@ -11,14 +11,13 @@
     <p>I made it very easy for you so you need to run only two commands:</p>
     <p>Here are the two commands:</p>
     <p><mark>sudo bash -c '
-        mkdir -p myapp/DEBIAN myapp/usr/local/bin myapp/usr/share/applications && \
-        echo -e "import tkinter as tk\n\nroot = tk.Tk()\nroot.title(\"MyApp\")\nroot.geometry(\"300x200\")\nlabel = tk.Label(root, text=\"Hello, this is MyApp!\")\nlabel.pack(pady=20)\n\nroot.mainloop()" > myapp/usr/local/bin/myapp.py && \
-        echo -e "#!/bin/bash\npython3 /usr/local/bin/myapp.py" > myapp/usr/local/bin/myapp && \
-        chmod +x myapp/usr/local/bin/myapp && \
-        echo -e "[Desktop Entry]\nVersion=1.0\nName=MyApp\nComment=An application that opens a tkinter window\nExec=/usr/local/bin/myapp\nIcon=utilities-terminal\nTerminal=false\nType=Application\nCategories=Utility;" > myapp/usr/share/applications/myapp.desktop && \
-        echo -e "Package: myapp\nVersion: 1.0\nSection: base\nPriority: optional\nArchitecture: all\nDepends: python3, python3-tk\nMaintainer: Your Name <your.email@example.com>\nDescription: MyApp that opens a tkinter window" > myapp/DEBIAN/control
-        '        
-        </mark></p>
+mkdir -p myapp/DEBIAN myapp/usr/local/bin myapp/usr/share/applications && \
+echo -e "import tkinter as tk\n\nroot = tk.Tk()\nroot.title(\"MyApp\")\nroot.geometry(\"300x200\")\nlabel = tk.Label(root, text=\"Hello, this is MyApp!\")\nlabel.pack(pady=20)\n\nroot.mainloop()" > myapp/usr/local/bin/myapp.py && \
+echo -e "#!/bin/bash\npython3 /usr/local/bin/myapp.py" > myapp/usr/local/bin/myapp && \
+chmod +x myapp/usr/local/bin/myapp && \
+echo -e "[Desktop Entry]\nVersion=1.0\nName=MyApp\nComment=An application that opens a tkinter window\nExec=/usr/local/bin/myapp\nIcon=utilities-terminal\nTerminal=false\nType=Application\nCategories=Utility;" > myapp/usr/share/applications/myapp.desktop && \
+echo -e "Package: myapp\nVersion: 1.0\nSection: base\nPriority: optional\nArchitecture: all\nDepends: python3, python3-tk\nMaintainer: Your Name <your.email@example.com>\nDescription: MyApp that opens a tkinter window" > myapp/DEBIAN/control
+'</mark></p>
     <br>
     <p>You can make some changes on the files</p>
     <p>Now run this command:</p>
