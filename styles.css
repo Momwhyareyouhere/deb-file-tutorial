@@ -52,7 +52,7 @@ header h1 {
 }
 
 .theme-toggle-btn:before {
-    content: '🌙'; /* Moon icon */
+    content: '🌙';
     display: block;
     text-align: center;
     line-height: 30px;
@@ -69,7 +69,7 @@ body.dark-mode .code-box {
 }
 
 body.dark-mode .theme-toggle-btn:before {
-    content: '🌞'; /* Sun icon */
+    content: '🌞'; 
 }
 
 code {
