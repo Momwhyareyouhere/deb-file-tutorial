@@ -1,4 +1,3 @@
-// script.js
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggleBtn = document.querySelector('.theme-toggle-btn');
     const copyBtns = document.querySelectorAll('.copy-btn');
