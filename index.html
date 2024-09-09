@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Create a .deb File - Tutorial</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>How to Create a .deb File</h1>
+        <a href="https://example.com/edit-page" class="edit-btn">Edit this page</a>
+        <button class="theme-toggle-btn" aria-label="Toggle dark mode"></button>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#requirements">Requirements</a></li>
+            <li><a href="#steps">Steps</a></li>
+            <li><a href="#troubleshooting">Troubleshooting</a></li>
+            <li><a href="#resources">Resources</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>Learn how to create a .deb file, a Debian package format used for installing software on Debian-based systems like Ubuntu.</p>
+        </section>
+
+        <section id="requirements">
+            <h2>Requirements</h2>
+            <ul>
+                <li>Debian-based system (e.g., Ubuntu)</li>
+                <li>Basic knowledge of terminal commands</li>
+                <li>Debian packaging tools (e.g., dpkg-deb, dh_make)</li>
+            </ul>
+        </section>
+
+        <section id="steps">
+            <h2>Steps to Create a .deb File</h2>
+            <div class="code-box">
+                <pre><code id="copy-text">sudo apt-get install build-essential devscripts debhelper</code></pre>
+                <button class="copy-btn" data-clipboard-target="#copy-text"></button>
+                <div class="copy-notification">Copied!</div>
+            </div>
+            <div class="code-box">
+                <pre><code id="copy-text-2">mkdir myproject
+cd myproject</code></pre>
+                <button class="copy-btn" data-clipboard-target="#copy-text-2"></button>
+                <div class="copy-notification">Copied!</div>
+            </div>
+            <div class="code-box">
+                <pre><code id="copy-text-3">mkdir -p myproject/usr/local/bin
+mkdir -p myproject/DEBIAN</code></pre>
+                <button class="copy-btn" data-clipboard-target="#copy-text-3"></button>
+                <div class="copy-notification">Copied!</div>
+            </div>
+            <div class="code-box">
+                <pre><code id="copy-text-4">nano myproject/DEBIAN/control</code></pre>
+                <button class="copy-btn" data-clipboard-target="#copy-text-4"></button>
+                <div class="copy-notification">Copied!</div>
+                Add the following content:
+                <pre><code>Package: myproject
+Version: 1.0
+Section: base
+Priority: optional
+Architecture: all
+Depends: python3
+Maintainer: Your Name &lt;your.email@example.com&gt;
+Description: A brief description of myproject.</code></pre>
+            </div>
+            <div class="code-box">
+                <pre><code id="copy-text-5">dpkg-deb --build myproject</code></pre>
+                <button class="copy-btn" data-clipboard-target="#copy-text-5"></button>
+                <div class="copy-notification">Copied!</div>
+            </div>
+            <div class="code-box">
+                <pre><code id="copy-text-6">sudo dpkg -i myproject.deb</code></pre>
+                <button class="copy-btn" data-clipboard-target="#copy-text-6"></button>
+                <div class="copy-notification">Copied!</div>
+            </div>
+        </section>
+
+        <section id="troubleshooting">
+            <h2>Troubleshooting</h2>
+            <p>If you encounter issues, check the following:</p>
+            <ul>
+                <li>Ensure all required fields are correctly filled in the control file.</li>
+                <li>Verify the directory structure and file permissions.</li>
+                <li>Check the output of the `dpkg-deb` command for errors.</li>
+            </ul>
+        </section>
+
+        <section id="resources">
+            <h2>Resources</h2>
+            <p>For more information, refer to:</p>
+            <ul>
+                <li><a href="https://www.debian.org/doc/manuals/maint-guide/">Debian New Maintainers' Guide</a></li>
+                <li><a href="https://manpages.debian.org/manpages/buster/dpkg-deb.1.en.html">dpkg-deb Manual</a></li>
+            </ul>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
